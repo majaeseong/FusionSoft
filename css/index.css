@@ -3,25 +3,87 @@
   position: fixed;
   top:0;
   width:100%;
+  z-index:10;
 }
 .index_main{
   display: flex;
   width:100%;
+  height:500px;
   margin-top:60px;
+  background-image: url('./../images/fs01_bg2.jpg');
+  background-repeat:no-repeat;
+  background-size: 100%;
+  position: relative;
 }
 .index_main_col{
   width: 50%;
-  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: transparent;
+  height:500px;
+}
+.index_main_col:first-child{
+  margin-left:10px;
+}
+
+.index_main_col img{
+  margin-top:10px;
 }
 
 .index_main_col span{
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
+  margin:10px;
+}
+
+.small_text{
+  font-size:1.0rem;
+  font-weight:200;
+}
+.index_main_text{
+  margin-top:10px;
 }
 
 .downalod{
   width:100%;
+}
+
+.scroll_down{
+  color:#dedede;
+  position: absolute;
+  float:left;
+  bottom: 10%;
+  left:50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scroll{
+  border: 2px solid #dedede;
+  border-radius: 13px;
+  width:23px;
+  height:39px;
+  text-align: center;
+  position:relative;
+}
+.mouse_move{
+  position:absolute;
+  top:0;
+  left:30%;
+  animation-name:mouse_move;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes mouse_move {
+  0%{
+    top:0;
+    opacity:0;
+  }50%{
+    opacity:1;
+  }
+  100%{
+    top:10px;
+    opacity:0;
+  }
 }
