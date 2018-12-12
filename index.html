@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>퓨전소프트</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.min.css">
+  <link rel="stylesheet" href="./css/swiper.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script type="text/javascript">
       $(document).ready(function(){
@@ -38,22 +41,43 @@
 
   <div class="fusionsoft">
     <h2>FusionSoft</h2>
-    <div class="fusion_menus">
-      <div class="fusion_menu">Vision</div>
-      <div class="fusion_menu">History</div>
-      <div class="fusion_menu">Organization</div>
-      <div class="fusion_menu">CI</div>
+    <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 3</div>
     </div>
-    <div class="fusion_vision"></div>
-    <div class="fusion_history"></div>
-    <div class="fusion_org"></div>
-    <div class="fusion_ci"></div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
   </div>
 
   <script>
-    function fusion_menu_click(){
-      
-    }
+  var menu = ['Version', 'History', 'Organization','CI']
+var mySwiper = new Swiper ('.swiper-container', {
+  // If we need pagination
+  loop:true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">'+(menu[index]) + '</span>';
+      },
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+})
   </script>
 </body>
 </html>
