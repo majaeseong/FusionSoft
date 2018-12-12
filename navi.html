@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Navigation</title>
+  <link rel="stylesheet" href="./css/style.css?ver=6">
+</head>
+<body>
+  <div class="nav_div">
+    <div class="nav_logo">
+      <img src="https://www.fusionsoft.co.kr/css/../images/logo.png" alt="fusionsoft">
+    </div>
+    <div class="nav_menus">
+      <div class="nav_menu">
+        <img src="./images/circle.png" class="nav_menu_circle">
+        <p>FUSIONSOFT</p>
+      </div>
+      <div class="nav_menu">
+        <img src="./images/circle.png" class="nav_menu_circle">
+        <p>BUSINESS</p>
+      </div>
+      <div class="nav_menu">
+        <img src="./images/circle.png" class="nav_menu_circle">
+        <p>RECRUIT</p>
+      </div>
+      <div class="nav_menu">
+        <img src="./images/circle.png" class="nav_menu_circle">
+        <p>LOCATION</p>
+      </div>
+      <div class="nav_menu">
+        <img src="./images/circle.png" class="nav_menu_circle">
+        <p>CONTACT</p>
+      </div>
+    </div>
+
+    <div class="nav_small_menus">
+      <img src="https://cdn3.iconfinder.com/data/icons/mini-icon-set-general-office/91/General_-_Office_30-512.png"
+        class="nav_small_menus_img" onclick="javascript:open_menu(0)">
+
+        <div class="nav_small_open_menus display_hidden" id="nav_small_open_menus">
+          <div class="nav_small_open_menu_close" onclick="javascript:open_menu(1)">X</div>
+          <div class="nav_small_open_menu">FUSIONSOFT</div>
+          <div class="nav_small_open_menu">BUSINESS</div>
+          <div class="nav_small_open_menu">RECRUIT</div>
+          <div class="nav_small_open_menu">LOCATION</div>
+          <div class="nav_small_open_menu">CONTACT</div>
+        </div>
+    </div>
+
+  </div>
+  <script>
+    function open_menu(arg){
+      var a = document.getElementById('nav_small_open_menus');
+
+      if(arg==1){
+        a.classList.remove('display_on');
+        var pos=0;
+        var id=setInterval(frame,3);
+        function frame(){
+          if(pos==800){
+            clearInterval(id);
+            a.classList.add('display_hidden');
+          }else{
+            pos=pos+5;
+            a.style.left=(pos)+'px'
+          }
+        }
+
+      }else if(arg==0){
+        a.classList.remove('display_hidden');
+        var pos=-800;
+        var id=setInterval(frame,3);
+        function frame(){
+          if(pos==0){
+            clearInterval(id);
+            a.classList.add('display_on');
+          }else{
+            pos=pos+5;
+            a.style.left=(-pos)+'px'
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
